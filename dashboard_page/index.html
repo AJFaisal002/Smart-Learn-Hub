@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Dashboard - Smart-Learn Hub</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Smart-Learn Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../textbook_page/textbook_page.html">Textbooks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../quiz_page/quiz_dashboard.html">Quizzes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aboutus_page/team_page.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../home_page/index.html">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Features Section -->
+    <section id="features-section" class="features-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Our Features</h2>
+        <div class="row text-center g-4">
+          <!-- Feature 1 -->
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h5 class="card-title">Interactive Textbooks</h5>
+                <p class="card-text">
+                  Dive into dynamic learning resources tailored to enhance
+                  engagement and understanding.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h5 class="card-title">Engaging Quizzes</h5>
+                <p class="card-text">
+                  Participate in fun and challenging quizzes to test your
+                  knowledge and boost retention.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h5 class="card-title">AI-Personalized Learning</h5>
+                <p class="card-text">
+                  Get personalized recommendations based on your progress and
+                  learning style.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center g-4 mt-4">
+          <!-- Feature 4 -->
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h5 class="card-title">Performance Tracking</h5>
+                <p class="card-text">
+                  Monitor your progress with insightful analytics and reports.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 5 -->
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h5 class="card-title">Collaborative Tools</h5>
+                <p class="card-text">
+                  Work with peers and educators in real-time to foster
+                  collaboration.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 6 -->
+          <div class="col-md-4">
+            <div class="card shadow">
+              <div class="card-body">
+                <h5 class="card-title">Mobile-Friendly</h5>
+                <p class="card-text">
+                  Access learning materials anytime, anywhere, on any device.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Progress Dashboard -->
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Progress Dashboard</h1>
+
+      <!-- Charts Section -->
+      <div class="row mb-5">
+        <!-- Pie Chart -->
+        <div class="col-md-6 text-center">
+          <h4>Task Completion Distribution</h4>
+          <canvas id="pieChart"></canvas>
+        </div>
+        <!-- Bar Chart -->
+        <div class="col-md-6 text-center">
+          <h4>Study Mode Distribution</h4>
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Recommendations Section -->
+      <div class="recommendations py-4">
+        <h2 class="text-center">Personalized Recommendations</h2>
+        <p class="text-center text-muted">
+          Based on your recent activities, our AI suggests the following areas
+          to enhance your learning experience:
+        </p>
+        <div class="row mt-4">
+          <!-- Recommendation 1 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="https://www.maplelms.com/wp-content/uploads/2021/08/Beige-Green-and-Pink-Blob-Organic-Sale-Quick-Create-Facebook-Cover.png"
+                class="card-img-top"
+                alt="Learning Path"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Learning Path</h5>
+                <p class="card-text">
+                  Explore a tailored learning journey just for you.
+                </p>
+                <a href="https://www.edutopia.org/article/creating-personalized-learning-paths" class="btn btn-primary">Review Path</a>
+              </div>
+            </div>
+          </div>
+          <!-- Recommendation 2 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="https://img.freepik.com/premium-photo/goal-is-constant-skill-growth-improvement-personal-skills-business-life-career-upskilling-personal-development-concept-upskilling-reskilling-new-skills-icon-wooden-cube_256259-5969.jpg"
+                class="card-img-top"
+                alt="Skill Growth"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Skill Growth</h5>
+                <p class="card-text">
+                  Focus on weak areas and boost your skill set.
+                </p>
+                <a href="https://www.coursera.org" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <!-- Recommendation 3 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRooPMRr8sxQye-GvbftTAuIukYIOteqEm0KA&s"
+                class="card-img-top"
+                alt="Teamwork Boost"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Teamwork Boost</h5>
+                <p class="card-text">
+                  Engage in collaborative learning for better efficiency.
+                </p>
+                <a href="https://www.teachthought.com/technology/10-ways-to-promote-student-collaboration/" class="btn btn-primary">Try Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Recommendation 4 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="https://www.savilleassessment.com/wp-content/uploads/2024/02/Data-Insight-Action-Wheel-2.png"
+                class="card-img-top"
+                alt="Data Insights"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Data Insights</h5>
+                <p class="card-text">
+                  Analyze trends for better learning strategies.
+                </p>
+                <a href="https://www.edsurge.com/news/2021-10-15-how-to-use-learning-analytics-to-improve-student-outcomes" class="btn btn-primary">View Insights</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-3 text-center">
+      <p>
+        &copy; 2024 Smart-Learn Hub. All Rights Reserved. Contributors: Adnan
+        Faisal & Shiti Chowdhury.
+      </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+  </body>
+</html>
