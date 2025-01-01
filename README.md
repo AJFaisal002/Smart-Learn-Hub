@@ -4,7 +4,7 @@ Smart-Learn Hub is an AI-driven educational platform designed to enhance the lea
 
 ---
 ## Video Demo
-Watch our platform in action:
+Watch our platform:
 [![Smart-Learn Hub Demo](https://img.youtube.com/vi/dgEm9F5rejA/0.jpg)](https://youtu.be/dgEm9F5rejA)
 ---
 
