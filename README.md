@@ -3,6 +3,11 @@
 Smart-Learn Hub is an AI-driven educational platform designed to enhance the learning experience through personalized and interactive tools. This repository contains all the necessary code and resources for the Smart-Learn Hub project, including AI-powered functionalities, responsive web pages, and interactive elements.
 
 ---
+## Video Demo
+Watch our platform in action:
+[![Smart-Learn Hub Demo](https://img.youtube.com/vi/IfdyzXNiEEU/0.jpg)]([https://youtu.be/IfdyzXNiEEU](https://youtu.be/dgEm9F5rejA))
+
+---
 
 ## Features
 - **AI-Powered Registration & Login**: Secure access with real-time password strength checker.
