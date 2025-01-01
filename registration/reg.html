@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Smart-Learn Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .strength-indicator {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+        .password-match {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: red;
+        }
+        .password-match.valid {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Smart-Learn Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../home_page/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aboutus_page/team_page.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form -->
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Register</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="registrationForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" required onkeyup="checkPasswordStrength()">
+                        <div id="passwordStrength" class="strength-indicator"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm-password" required onkeyup="checkPasswordMatch()">
+                        <div id="passwordMatch" class="password-match"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" onclick="validateForm(event)">Register</button>
+                </form>
+                <p class="text-center mt-3">Already have an account? <a href="../login_page/login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript for Validation -->
+    <script>
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const strengthIndicator = document.getElementById('passwordStrength');
+            let strengthMessage = '';
+
+            if (password.length < 6) {
+                strengthMessage = '<span style="color: red;">Weak</span>: Password is too short.';
+            } else if (!/[A-Z]/.test(password)) {
+                strengthMessage = '<span style="color: orange;">Medium</span>: Add an uppercase letter.';
+            } else if (!/\d/.test(password)) {
+                strengthMessage = '<span style="color: green;">Strong</span>: Add a number.';
+            } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                strengthMessage = '<span style="color: darkgreen;">Very Strong</span>: Add a special character.';
+            } else {
+                strengthMessage = '<span style="color: darkblue;">Excellent</span>: Great password!';
+            }
+
+            strengthIndicator.innerHTML = strengthMessage;
+        }
+
+        function checkPasswordMatch() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const passwordMatch = document.getElementById('passwordMatch');
+
+            if (confirmPassword === '') {
+                passwordMatch.textContent = '';
+            } else if (password === confirmPassword) {
+                passwordMatch.textContent = 'Passwords match!';
+                passwordMatch.classList.add('valid');
+                passwordMatch.classList.remove('invalid');
+            } else {
+                passwordMatch.textContent = 'Passwords do not match!';
+                passwordMatch.classList.add('invalid');
+                passwordMatch.classList.remove('valid');
+            }
+        }
+
+        function validateForm(event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                event.preventDefault(); // Prevent form submission
+                alert('Passwords do not match. Please check again.');
+            }
+        }
+    </script>
+</body>
+</html>

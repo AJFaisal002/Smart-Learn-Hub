@@ -1,0 +1,62 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Charts Section */
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Recommendations */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: #007bff;
+}
+
+/* Features Section */
+.features-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+.features-section .card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.features-section .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.features-section .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.features-section .card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
+
+/* Footer */
+.footer {
+    font-size: 0.9rem;
+}

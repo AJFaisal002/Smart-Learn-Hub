@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Textbook - Smart-Learn Hub</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom Styling */
+        .ai-features-section {
+            background-color: #f8f9fa; /* Light gray for differentiation */
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .ai-features-section h2 {
+            color: #343a40; /* Dark gray for the heading */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../home_page/index.html">Smart-Learn Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../dashboard_page/index.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../quiz_page/quiz_dashboard.html">Quizzes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aboutus_page/team_page.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Book Slider Section -->
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Interactive Textbooks</h2>
+        <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Book 1 -->
+                <div class="carousel-item active">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="fw-bold">"Python Crash Course" by Eric Matthes</h2>
+                            <p>This beginner-friendly book provides a practical introduction to programming in Python. Learn through engaging examples, hands-on projects, and interactive exercises.</p>
+                            <a href="https://ehmatthes.github.io/pcc/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="https://m.media-amazon.com/images/I/81ZBWeKoZVL._SL1500_.jpg" alt="Python Crash Course Cover" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+                <!-- Book 2 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="fw-bold">"Automate the Boring Stuff with Python" by Al Sweigart</h2>
+                            <p>A fun and practical guide to Python programming, designed to help you automate everyday tasks with ease and efficiency.</p>
+                            <a href="https://automatetheboringstuff.com/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="https://img.drz.lazcdn.com/static/bd/p/f498aed6bca7df99bb82e3fa2f290d02.jpg_720x720q80.jpg" alt="Automate the Boring Stuff Cover" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+                <!-- Book 3 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="fw-bold">"Fluent Python" by Luciano Ramalho</h2>
+                            <p>A comprehensive guide to writing idiomatic and efficient Python code, exploring advanced techniques and tools.</p>
+                            <a href="https://www.oreilly.com/library/view/fluent-python/9781491946237/" target="_blank" class="btn btn-primary">Learn More</a>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="https://static1.eboighar.com/thumbimages/Books/book_26302022-12-26_1672052090.jpg" alt="Fluent Python Cover" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- AI Functionalities Section -->
+    <div class="container ai-features-section mt-5">
+        <h2 class="text-center mb-4">AI-Powered Textbook Features</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <textarea id="textInput" class="form-control" rows="10" placeholder="Paste your textbook content here..."></textarea>
+                <button class="btn btn-primary w-100 mt-3" onclick="summarizeText()">Summarize</button>
+                <button class="btn btn-secondary w-100 mt-2" onclick="generateQuiz()">Generate Quiz</button>
+                <button class="btn btn-success w-100 mt-2" onclick="readText()">Read Aloud</button>
+            </div>
+            <div class="col-md-6">
+                <h5>Summary</h5>
+                <div id="summaryOutput" class="border p-3" style="height: 200px; overflow-y: auto;"></div>
+                <h5 class="mt-4">Quiz</h5>
+                <div id="quizOutput" class="border p-3" style="height: 200px; overflow-y: auto;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Smart-Learn Hub. All Rights Reserved. Contributors: Adnan Faisal & Shiti Chowdhury.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript for AI Functionalities -->
+    <script>
+        // Summarize Text
+        function summarizeText() {
+            const text = document.getElementById('textInput').value;
+            if (text.trim() === '') {
+                alert('Please enter some text.');
+                return;
+            }
+            const summary = text.split(' ').slice(0, 20).join(' ') + '...';
+            document.getElementById('summaryOutput').innerText = summary;
+        }
+
+        // Generate Quiz
+        function generateQuiz() {
+            const text = document.getElementById('textInput').value;
+            if (text.trim() === '') {
+                alert('Please enter some text.');
+                return;
+            }
+            const words = text.split(' ');
+            const quizQuestion = `What does the word "${words[5]}" mean in the context of the text?`;
+            document.getElementById('quizOutput').innerHTML = `<p>${quizQuestion}</p><button class="btn btn-outline-primary btn-sm">Answer</button>`;
+        }
+
+        // Text-to-Speech
+        function readText() {
+            const text = document.getElementById('textInput').value;
+            if (text.trim() === '') {
+                alert('Please enter some text.');
+                return;
+            }
+            const speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>
