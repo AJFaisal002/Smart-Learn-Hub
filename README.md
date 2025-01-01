@@ -37,10 +37,10 @@ Smart-Learn Hub is an AI-driven educational platform designed to enhance the lea
 ### **Registration Page**
 ![Registration Page](screenshots/registration_page.png)
 
-### **Dashboard**
+### **Dashboard Page**
 ![Dashboard](screenshots/dashboard_page.png)
 
-### **Textbook Page**
+### *Textbook Page*
 ![Textbook Page](screenshots/textbook_page.png)
 
 ### **Quiz Page**
