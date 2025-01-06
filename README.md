@@ -72,10 +72,5 @@ Watch our platform:
 
 ---
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
 ## Contact
 For any queries or feedback, feel free to contact the collaborators through their provided email addresses.
